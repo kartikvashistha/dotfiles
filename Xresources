@@ -1,6 +1,6 @@
+URxvt.font: xft:Inconsolata for Powerline:size=11
 
-URxvt.font: xft:monospace:size=10
-URxvt.letterSpace: 0
+URxvt.letterSpace: -1
 !URxvt.lineSpace:-1
 
 URxvt.scrollBar: false
