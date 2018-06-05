@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kartik/Pictures/skylinejpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0F0B11",
+        "foreground": "#a0cccb",
+        "cursor": "#a0cccb"
+    },
+    "colors": {
+        "color0": "#0F0B11",
+        "color1": "#313655",
+        "color2": "#324B57",
+        "color3": "#4E4B4C",
+        "color4": "#595760",
+        "color5": "#936655",
+        "color6": "#6B8973",
+        "color7": "#a0cccb",
+        "color8": "#708e8e",
+        "color9": "#313655",
+        "color10": "#324B57",
+        "color11": "#4E4B4C",
+        "color12": "#595760",
+        "color13": "#936655",
+        "color14": "#6B8973",
+        "color15": "#a0cccb"
+    }
+}

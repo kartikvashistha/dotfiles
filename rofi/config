@@ -1,0 +1,7 @@
+#Rofi config file created as per the instructions from the pywal wiki
+
+# Dark theme.
+#rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+
+# Light theme.
+rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
