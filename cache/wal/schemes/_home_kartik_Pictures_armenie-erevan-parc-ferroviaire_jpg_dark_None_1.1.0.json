@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kartik/Pictures/armenie-erevan-parc-ferroviaire.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0f0d12",
+        "foreground": "#abb9c0",
+        "cursor": "#abb9c0"
+    },
+    "colors": {
+        "color0": "#0f0d12",
+        "color1": "#5F4639",
+        "color2": "#373E4A",
+        "color3": "#615752",
+        "color4": "#985A37",
+        "color5": "#8E6E58",
+        "color6": "#A18B71",
+        "color7": "#abb9c0",
+        "color8": "#778186",
+        "color9": "#5F4639",
+        "color10": "#373E4A",
+        "color11": "#615752",
+        "color12": "#985A37",
+        "color13": "#8E6E58",
+        "color14": "#A18B71",
+        "color15": "#abb9c0"
+    }
+}

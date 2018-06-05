@@ -1,18 +1,16 @@
-#!/bin/sh
+setxkbmap gb
 
-#setting keyboard layout
-#setxkbmap gb
+start-pulseaudio-x11
 
-#start i3
-#exec i3
-
-#start bspwm
-#sxhkd & 
-#exec bspwm
-
-#exec start-pulseaudio-x11
-
-export LANG=en_GB.UTF-8
-
+dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
+
+exec i3
+#From pywal wiki:
+# Add this to your .xinitrc or whatever file starts programs on startup.
+# -R restores the last colorscheme that was in use.
+wal -n -R
+feh --no-xinerama --no-fehbg --bg-center "$(< "${HOME}/.cache/wal/wal")"
+
+#exec i3

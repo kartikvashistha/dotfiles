@@ -1,0 +1,21 @@
+set $wallpaper /home/kartik/Pictures/witcher_3.jpg
+
+set $background #0e1b2b
+set $foreground #cebfc1
+
+set $color0 #0e1b2b
+set $color1 #C97453
+set $color2 #DDA16F
+set $color3 #24708B
+set $color4 #647489
+set $color5 #947988
+set $color6 #358CA1
+set $color7 #cebfc1
+set $color8 #908587
+set $color9 #C97453
+set $color10 #DDA16F
+set $color11 #24708B
+set $color12 #647489
+set $color13 #947988
+set $color14 #358CA1
+set $color15 #cebfc1

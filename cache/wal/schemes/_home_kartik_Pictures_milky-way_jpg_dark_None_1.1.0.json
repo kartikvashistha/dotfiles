@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kartik/Pictures/milky-way.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0F0E0E",
+        "foreground": "#aeb1bb",
+        "cursor": "#aeb1bb"
+    },
+    "colors": {
+        "color0": "#0F0E0E",
+        "color1": "#3B3B43",
+        "color2": "#423D44",
+        "color3": "#464343",
+        "color4": "#4C4A4F",
+        "color5": "#656266",
+        "color6": "#897C76",
+        "color7": "#aeb1bb",
+        "color8": "#797b82",
+        "color9": "#3B3B43",
+        "color10": "#423D44",
+        "color11": "#464343",
+        "color12": "#4C4A4F",
+        "color13": "#656266",
+        "color14": "#897C76",
+        "color15": "#aeb1bb"
+    }
+}
