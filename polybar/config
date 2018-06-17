@@ -21,7 +21,8 @@
 
 ;These are colours applied from Xresources. Pywal changes the colours automatically when the wallpaper is changed.
 background = ${xrdb:color0:#222}
-background-alt = #444
+;background-alt = #444
+background-alt = ${xrdb:color9:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
@@ -32,7 +33,7 @@ alert = ${xrdb:color3:#222}
 ;monitor = ${env:MONITOR:HDMI-1}
 monitor = ${env:MONITOR:DP-2.8}
 width = 100%
-height = 25
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -51,10 +52,10 @@ border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = Fantasque Sans Mono:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -63,13 +64,13 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=12;4
 
 modules-left = bspwm i3
-modules-center = cpu memory
+modules-center = 
 modules-right =  volume xkeyboard date powermenu
 
 tray-position = right
 tray-padding = 2
 ;tray-transparent = true
-;tray-background = #0063ff
+tray-background = ${xrdb:color11:#222}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -91,7 +92,7 @@ cursor-scroll = ns-resize
 ;monitor = ${env:MONITOR:HDMI-1}
 monitor = ${env:MONITOR:DP-4.8}
 width = 100%
-height = 25
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -108,23 +109,24 @@ border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = Fantasque Sans Mono:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
+font-3 = FontAwesome:pixelsize=12;4
 
 modules-left = bspwm i3
-modules-center = cpu memory
-modules-right =  eth network wlan volume xkeyboard date powermenu
+modules-center = 
+modules-right = volume xkeyboard date powermenu
 
 tray-position = right
 tray-padding = 2
 ;tray-transparent = true
-;tray-background = #0063ff
+tray-background = ${xrdb:color11:#222}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -159,13 +161,15 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-prefix-underline = ${colors.secondary}
 
-label-layout =  %layout%
+label-layout = "  %layout% "
 ;label-layout-underline = ${colors.secondary}
 
-label-indicator-padding = 2
+label-indicator-padding = 1
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
+label-layout-background = ${xrdb:color11:#222}
 
 [module/filesystem]
 type = internal/fs
@@ -198,12 +202,7 @@ label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
-ws-icon-0 = 1;♚
-ws-icon-1 = 2;♛
-ws-icon-2 = 3;♜
-ws-icon-3 = 4;♝
-ws-icon-4 = 5;♞
-ws-icon-default = ♟
+
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
@@ -211,30 +210,32 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
+label-mode = %mode%
+
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused = %name%
+label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
 
 
 ;[module/workspaces]
@@ -253,7 +254,9 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
-label = CPU %percentage:2%%
+label = " CPU %percentage:2%% "
+
+label-background = ${xrdb:color3:#222}
 
 [module/memory]
 type = internal/memory
@@ -261,7 +264,9 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
-label = MEM  %percentage_used%%
+label = " MEM  %percentage_used%% "
+
+label-background = ${xrdb:color3:#222}
 
 [module/wlan]
 type = internal/network
@@ -316,6 +321,8 @@ accumulate-stats = true
 ; Default: false
 unknown-as-up = true
 
+label-background = ${xrdb:color3:#222}
+
 [module/eth]
 type = internal/network
 interface = enp0s31f6
@@ -328,6 +335,8 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
+label-background = ${xrdb:color3:#222}
+
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
@@ -339,27 +348,31 @@ type = internal/date
 interval = 1
 
 date-alt =
-date = " %d-%m-%Y "
+date = " %A %d-%m-%Y "
 
 time-alt = %H:%M
-time = %H:%M:%S
+time = "%H:%M:%S "
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
-label = %date%  %time%
+label = %date% %time% 
+
+label-background = ${xrdb:color11:#222}
 
 [module/volume]
 type = internal/volume
 
 format-volume = <label-volume> 
-label-volume =   %percentage%%
+label-volume = "  %percentage%% "
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-foreground = ${colors.secondary}
 label-muted =  sound muted
+
+label-volume-background = ${xrdb:color11:#222}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
