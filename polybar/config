@@ -64,7 +64,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=12;4
 
 modules-left = bspwm i3
-modules-center = 
+modules-center = wlan
 modules-right =  volume xkeyboard date powermenu
 
 tray-position = right
@@ -120,7 +120,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=12;4
 
 modules-left = bspwm i3
-modules-center = 
+modules-center = wlan 
 modules-right = volume xkeyboard date powermenu
 
 tray-position = right
@@ -271,13 +271,15 @@ label-background = ${xrdb:color3:#222}
 [module/wlan]
 type = internal/network
 interface = enp0s31f6
-interval = 3.0
+interval = 2.0
 
 unknown-as-up = true
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+;format-connected-underline = #9f78e1
+label-connected = "  %ifname%   %downspeed%  %upspeed% "
+
+label-connected-background = ${xrdb:color6:#222}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -290,7 +292,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+;ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/network]
 type = internal/network
