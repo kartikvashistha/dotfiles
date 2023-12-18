@@ -5,34 +5,40 @@ Ansible role to install my dotfiles across my different OS's.
 
 Requirements
 ------------
+Install Ansible per your OS:
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+```
+# For macos
+brew install ansible
+
+# For fedora
+sudo dnf install ansible ansible-core
+
+# Install the community general collection
+ansible-galaxy collection install community.general
+```
 
 Role Variables
 --------------
 
 A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+| Variable  | Values   | Description |
+| ------------- | ------------- |-----|
+| home_user_path | (**required**) string | Home path of the user to which you want to install the dotfiles. |
+| os | (*required*) `macos`, `fedora`| The OS on which this role will run.|
+| zsh_framework_config |(*optional*) `ohmyzsh`, `starship`| The ZSH framework which's configuration needs to be enabled.|
+| gitconfig_name | (*optional*) string| Value for gitconfig name.|
+| gitconfig_email |(*optional*) string|Value for gitconfig email.|
+| wsl| (**Default**: false) string |  Boolean value for WSL specific configurations.|
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+Example playbooks can be found at the root of this repository: `fedora-wsl-playbook.yaml` and `macos-playbook.yaml`
 
 License
 -------
 
 BSD
 
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
