@@ -4,4 +4,7 @@ home_user_path: # Home Path of the user where you want to install the dotfiles
 
 os: # Values can be macos, fedora
 
-zsh_framework_config: # Values can be: ohmyzsh
+zsh_framework_config: # Values can be: ohmyzsh,starship
+
+gitconfig_name:
+gitconfig_email:

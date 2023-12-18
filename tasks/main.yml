@@ -18,7 +18,7 @@
 - name: Create .ssh/config
   ansible.builtin.template:
     src: templates/ssh-config.j2
-    dest: /home/{{ ansible_facts['env']['SUDO_USER'] }}/.ssh/config
+    dest: "{{ home_user_path }}/.ssh/config"
 
 - name: Create gitconfig
   ansible.builtin.template:
