@@ -6,5 +6,5 @@ os: # Values can be macos, fedora
 
 zsh_framework_config: # Values can be: ohmyzsh,starship
 
-gitconfig_name:
-gitconfig_email:
+gitconfig_name: # Git config name
+gitconfig_email: # Git config email
