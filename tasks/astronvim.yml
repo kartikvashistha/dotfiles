@@ -1,0 +1,35 @@
+---
+- name: Delete neovim cache before installing Astronvim
+  ansible.builtin.file:
+    path: "{{ home_user_path }}/.local/share/nvim"
+    state: absent
+ # Use the HTTPS remote instead of SSH, since it's too troublesome to download the repo via ssh when using the 1password agent initially.
+- name: Download & Install AstroNvim
+  ansible.builtin.git:  # noqa: latest
+    repo: https://github.com/AstroNvim/AstroNvim.git
+    dest: "{{ home_user_path }}/.config/nvim"
+    depth: 1
+  become: true
+  become_user: "{{ ansible_facts['env']['SUDO_USER'] }}" 
+
+- name: Install my AstroNvim user config
+  ansible.builtin.git:  # noqa: latest
+    repo: "https://github.com/kartikvashistha/astronvim_config.git"
+    dest: "{{ home_user_path }}/.config/nvim/lua/user"
+  become: true
+  become_user: "{{ ansible_facts['env']['SUDO_USER'] }}" 
+
+  # Change remote from HTTPS to SSH for both of the above repos. Maybe move this to a dedicated tasks file for all repos...?
+- name: Change remote from https to ssh for Astronvim repo 
+  git_config:
+    repo: "{{ home_user_path }}/.config/nvim/"
+    scope: local
+    name: "remote.origin.url"
+    value: "git@github.com:Astronvim/Astronvim.git"
+
+- name: Change remote from https to ssh for Astro user config 
+  git_config:
+    repo: "{{ home_user_path }}/.config/nvim/lua/user"
+    scope: local
+    name: "remote.origin.url"
+    value: "git@github.com:kartikvashistha/astronvim_config.git"

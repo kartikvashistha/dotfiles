@@ -1,0 +1,24 @@
+{% if zsh_framework_config == "ohmyzsh" -%}
+source ~/.omzrc
+{% endif -%}
+source virtualenvwrapper.sh
+
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+# Aliases
+alias k='kubectl'
+alias kx='kubectx'
+alias kns='kubens'
+
+alias vim=nvim
+
+{% if wsl -%}
+# WSL aliases
+alias ssh='ssh.exe'
+alias ssh-add='ssh-add.exe'
+{% endif -%}
+
+{% if zsh_framework_config == "starship" %}
+# This needs to be at the very end, if using starship
+eval "$(starship init zsh)"
+{% endif -%}
