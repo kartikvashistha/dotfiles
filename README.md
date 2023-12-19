@@ -31,6 +31,7 @@ A description of the settable variables for this role should go here, including 
 | gitconfig_name | (*optional*) string| Value for gitconfig name.|
 | gitconfig_email |(*optional*) string|Value for gitconfig email.|
 | wsl| (**Default**: false) string |  Boolean value for WSL specific configurations.|
+| neovim framework |(**Default**: astronvim) string | String value that specifies which neovim configuration to install. Currently supports only AstroNvim.|
 
 Example Playbook
 ----------------
