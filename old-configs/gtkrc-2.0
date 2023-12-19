@@ -1,7 +1,0 @@
-gtk-application-prefer-dark-theme = false
-
-gtk-icon-theme-name = "Flat-Remix-Dark"
-
-gtk-theme-name = "Materia-dark-compact"
-
-gtk-font-name = "Fantasque Sans Mono"
