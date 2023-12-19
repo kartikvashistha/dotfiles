@@ -1,4 +1,4 @@
-Role Name
+Dotfiles
 =========
 
 Ansible role to install my dotfiles across my different OS's.
