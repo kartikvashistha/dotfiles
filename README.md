@@ -35,7 +35,10 @@ A description of the settable variables for this role should go here, including 
 Example Playbook
 ----------------
 
-Example playbooks can be found at the root of this repository: `fedora-wsl-playbook.yaml` and `macos-playbook.yaml`
+Example playbooks can be found at the root of this repository: `fedora-wsl-playbook.yaml` and `macos-playbook.yaml`. You can run the playbook like this:
+```
+ansible-playbook -K fedora-wsl-playbook.yaml
+```
 
 License
 -------
