@@ -1,0 +1,17 @@
+rofi.lines: 5
+rofi.eh: 2
+rofi.padding: 200
+!rofi.fullscreen: true
+rofi.bw: 0
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: argb:31d1f21, #f3f4f5, argb:31d1f21, argb:31d1f21, #9575cd 
+rofi.font: Fantasque Sans Mono 18
+
+# Dark theme.
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+
+# Light theme.
+#rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
