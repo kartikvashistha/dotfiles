@@ -1,7 +1,7 @@
 ---
-# - name: Print all available facts
-#   ansible.builtin.debug:
-#     var: ansible_facts
+- name: Print all available facts
+  ansible.builtin.debug:
+    var: ansible_facts['env']
 
 # tasks file for dotfiles
 - name: Create .zshrc file
@@ -24,3 +24,8 @@
   ansible.builtin.template:
     src: templates/gitconfig.j2
     dest: "{{ home_user_path }}/.gitconfig"
+
+- name: Install & configure Astronvim?
+  ansible.builtin.include_tasks: astronvim.yml
+  when: neovim_framework  == "astronvim"
+ 
