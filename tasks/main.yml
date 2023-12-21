@@ -15,6 +15,12 @@
     dest: "{{ home_user_path }}/.omzrc"
   when: zsh_framework_config == "ohmyzsh"
 
+- name: Create .ssh directory
+  ansible.builtin.file:
+    state: directory
+    path: "{{ home_user_path }}/.ssh"
+    mode: '0755'
+
 - name: Create .ssh/config
   ansible.builtin.template:
     src: templates/ssh-config.j2
