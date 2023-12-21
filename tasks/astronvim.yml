@@ -1,8 +1,8 @@
 ---
-- name: Delete neovim cache before installing Astronvim
-  ansible.builtin.file:
-    path: "{{ home_user_path }}/.local/share/nvim"
-    state: absent
+# - name: Delete neovim cache before installing Astronvim
+#   ansible.builtin.file:
+#     path: "{{ home_user_path }}/.local/share/nvim"
+#     state: absent
  # Use the HTTPS remote instead of SSH, since it's too troublesome to download the repo via ssh when using the 1password agent initially.
 - name: Download & Install AstroNvim
   ansible.builtin.git:  # noqa: latest
