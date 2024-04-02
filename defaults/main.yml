@@ -6,6 +6,8 @@ os: # Values can be macos, fedora
 
 zsh_framework_config: # Values can be: ohmyzsh,starship
 
+neovim_framework: astronvim # Values can be: astronvim
+
 gitconfig_name: # Git config name
 gitconfig_email: # Git config email
 
