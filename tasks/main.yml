@@ -37,7 +37,7 @@
   become: true
   become_user: "{{ ansible_facts['env']['SUDO_USER'] }}"
 
-- name: Install & configure Astronvim?
-  ansible.builtin.include_tasks: astronvim.yml
-  when: neovim_framework  == "astronvim"
- 
+- name: Install neovim config files
+  ansible.builtin.copy:
+    src: files/nvim
+    dest: "{{ home_user_path }}/.config"
